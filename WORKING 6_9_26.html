@@ -1,0 +1,1869 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+  <title>Bridgeback Pocket</title>
+  <link rel="icon" type="image/png" href="assets/favicon.png" />
+
+  <style>
+  .app-header {
+  width: 100%;
+  padding: 24px;
+  background: #2b2c31;
+  border-bottom: 2px solid #85a6ab;
+  box-sizing: border-box;
+}
+
+.brand-row {
+  width: 100%;
+  max-width: 900px;
+  margin: 0 auto;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+  text-align: center;
+}
+
+.header-wordmark-full {
+  display: block;
+  width: 420px;
+  max-width: 90vw;
+  height: auto;
+  object-fit: contain;
+  border-radius: 14px;
+  margin: 0 auto;
+}
+
+.tagline {
+  margin: 0;
+  color: #d7d0bf;
+  text-align: center;
+}
+    body {
+      margin: 0;
+      font-family: Arial, sans-serif;
+      background: #202124;
+      color: #f4f1e8;
+      line-height: 1.5;
+    }
+header {
+  padding: 18px 24px;
+  background: #2b2c31;
+  border-bottom: 2px solid #85a6ab;
+  display: flex;
+  justify-content: center;
+}
+
+.brand-row {
+  width: 100%;
+  max-width: 900px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  gap: 10px;
+}
+
+.header-wordmark-full {
+  display: block;
+  width: 420px;
+  max-width: 90vw;
+  height: auto;
+  object-fit: contain;
+  border-radius: 14px;
+  margin: 0 auto;
+ 
+}
+
+.tagline {
+  margin: 0;
+  color: #d7d0bf;
+  text-align: center;
+}
+
+    main {
+      padding: 24px;
+      max-width: 850px;
+      margin: 0 auto;
+    }
+
+    .card {
+      background: #2d2f35;
+      border: 1px solid #444650;
+      border-radius: 16px;
+      padding: 20px;
+      margin-bottom: 20px;
+      box-shadow: 0 4px 12px rgba(0, 0, 0, 0.25);
+    }
+
+    button {
+      display: block;
+      width: 100%;
+      margin: 12px 0;
+      padding: 16px;
+      border: none;
+      border-radius: 12px;
+      background: #85a6ab;
+      color: #111820;
+      font-size: 1rem;
+      font-weight: bold;
+      cursor: pointer;
+    }
+
+    button:hover {
+      background: #cfe1ec;
+    }
+
+    .secondary-button {
+      background: #444650;
+      color: #f4f1e8;
+    }
+
+    .secondary-button:hover {
+      background: #555864;
+    }
+
+    label {
+      display: block;
+      margin-top: 18px;
+      margin-bottom: 6px;
+      font-weight: bold;
+      color: #bfd3e0;
+    }
+
+    textarea {
+      width: 100%;
+      min-height: 90px;
+      padding: 12px;
+      border-radius: 10px;
+      border: 1px solid #555864;
+      background: #1b1c20;
+      color: #f4f1e8;
+      font-size: 1rem;
+      box-sizing: border-box;
+      resize: vertical;
+    }
+
+    pre {
+      white-space: pre-wrap;
+      background: #1b1c20;
+      color: #f4f1e8;
+      padding: 16px;
+      border-radius: 12px;
+      border: 1px solid #555864;
+    }
+
+footer {
+  padding: 20px;
+  text-align: center;
+  color: #aaa;
+  font-size: 0.9rem;
+}
+
+    .small-note {
+      color: #c8c2b2;
+      font-size: 0.95rem;
+    }
+
+    .success {
+      color: #a8e6a1;
+      font-weight: bold;
+    }
+
+    .home-title {
+      margin-top: 0;
+    }
+
+    .hero-image {
+      width: 100%;
+      max-height: 420px;
+      object-fit: cover;
+      object-position: center;
+      border-radius: 18px;
+      border: 1px solid #444650;
+      margin-bottom: 18px;
+    }
+
+    .tool-grid {
+      display: grid;
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+      gap: 14px;
+      margin-top: 18px;
+    }
+
+    .tool-tile {
+      display: flex;
+      flex-direction: column;
+      align-items: flex-start;
+      min-height: 140px;
+      text-align: left;
+      background: #1f2025;
+      color: #f4f1e8;
+      border: 1px solid #444650;
+      box-shadow: 0 4px 12px rgba(0, 0, 0, 0.25);
+    }
+
+    .tool-tile:hover {
+      background: #292b31;
+      border-color: #85a6ab;
+    }
+
+    .tool-icon {
+      font-size: 1.8rem;
+      color: #bfd3e0;
+      margin-bottom: 10px;
+    }
+
+    .tool-title {
+      font-size: 1.1rem;
+      font-weight: bold;
+      color: #bfd3e0;
+      margin-bottom: 8px;
+    }
+
+    .tool-description {
+      font-size: 0.95rem;
+      font-weight: normal;
+      color: #d7d0bf;
+      line-height: 1.35;
+    }
+
+    .profile-section {
+      margin: 16px 0;
+      border: 1px solid #444650;
+      border-radius: 14px;
+      background: #24262c;
+      overflow: hidden;
+    }
+
+    .profile-section summary {
+      cursor: pointer;
+      padding: 16px;
+      font-weight: bold;
+      color: #bfd3e0;
+      background: #1f2025;
+      list-style: none;
+    }
+
+    .profile-section summary::-webkit-details-marker {
+      display: none;
+    }
+
+    .profile-section summary::after {
+      content: " +";
+      float: right;
+      color: #9fb7c9;
+    }
+
+    .profile-section[open] summary::after {
+      content: " −";
+    }
+
+    .profile-section-content {
+      padding: 0 16px 18px 16px;
+    }
+
+    .profile-section p {
+      color: #c8c2b2;
+    }
+
+    .progress-list {
+      margin-top: 16px;
+      padding: 0;
+      list-style: none;
+    }
+
+    .progress-list li {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      padding: 10px 0;
+      border-bottom: 1px solid #444650;
+    }
+
+    .progress-list li:last-child {
+      border-bottom: none;
+    }
+
+    .progress-done {
+      color: #bfd3e0;
+      font-weight: bold;
+    }
+
+    .progress-missing {
+      color: #c8c2b2;
+    }
+
+    .progress-pill {
+      display: inline-block;
+      margin-top: 10px;
+      padding: 8px 12px;
+      border-radius: 999px;
+      background: #1f2025;
+      border: 1px solid #444650;
+      color: #d7d0bf;
+      font-size: 0.9rem;
+    }
+
+    .tutorial-card {
+      background: #1f2025;
+      border: 1px solid #444650;
+      border-radius: 16px;
+      padding: 20px;
+      margin-top: 18px;
+    }
+
+    .tutorial-card h3 {
+      margin-top: 0;
+      color: #bfd3e0;
+    }
+
+    .tutorial-steps {
+      padding-left: 22px;
+    }
+
+    .tutorial-steps li {
+      margin-bottom: 12px;
+    }
+
+    .tutorial-note {
+      margin-top: 16px;
+      padding: 12px;
+      border-left: 4px solid #9fb7c9;
+      background: #24262c;
+      color: #d7d0bf;
+      border-radius: 8px;
+    }
+
+    .option-grid {
+      display: grid;
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+      gap: 10px;
+      margin: 12px 0 18px 0;
+    }
+
+    .option-button {
+      background: #1f2025;
+      color: #f4f1e8;
+      border: 1px solid #444650;
+      text-align: left;
+      font-weight: normal;
+    }
+
+    .option-button:hover {
+      background: #292b31;
+      border-color: #9fb7c9;
+    }
+
+    .option-button.selected {
+      background: #9fb7c9;
+      color: #111820;
+      border-color: #cfe1ec;
+    }
+
+    .option-title {
+      display: block;
+      font-weight: bold;
+      margin-bottom: 4px;
+    }
+
+    .option-description {
+      display: block;
+      font-size: 0.9rem;
+      line-height: 1.3;
+      opacity: 0.9;
+    }
+
+    .generated-section {
+      margin-top: 20px;
+    }
+
+    .generated-label {
+      color: #bfd3e0;
+      font-weight: bold;
+      margin-top: 16px;
+    }
+
+    .message-preview-note {
+      color: #c8c2b2;
+      font-size: 0.95rem;
+      margin-top: 8px;
+    }
+
+    input[type="file"] {
+      display: none;
+    }
+
+    @media (max-width: 600px) {
+      main {
+        padding: 16px;
+      }
+
+      .header-wordmark-full {
+        max-width: 340px;
+      }
+
+      .tool-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .tool-tile {
+        min-height: 120px;
+      }
+
+      .option-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .hero-image {
+        max-height: 300px;
+      }
+    }
+  </style>
+  <body>
+<header class="app-header">
+  <div class="brand-row">
+    <img
+      src="./assets/wordmark-blue.PNG"
+      alt="Bridgeback"
+      class="header-wordmark-full"
+    />
+
+    <p class="tagline">
+      A user-owned support map for communication, access, and self-advocacy.
+    </p>
+  </div>
+</header>
+  <main>
+    <section class="card">
+      <h2>Bridgeback Tools</h2>
+      <p class="small-note">
+        Choose the kind of support you need right now.
+      </p>
+
+      <div class="tool-grid">
+        <button class="tool-tile" onclick="showHome()">
+          <span class="tool-icon">⌂</span>
+          <span class="tool-title">Home</span>
+          <span class="tool-description">Return to the main welcome screen.</span>
+        </button>
+
+        <button class="tool-tile" onclick="showProfile()">
+          <span class="tool-icon">☰</span>
+          <span class="tool-title">Bridge Profile</span>
+          <span class="tool-description">Build your personal access and support map.</span>
+        </button>
+
+        <button class="tool-tile" onclick="showOverwhelmed()">
+          <span class="tool-icon">◈</span>
+          <span class="tool-title">Overwhelm Mode</span>
+          <span class="tool-description">Get one usable support card for hard moments.</span>
+        </button>
+
+        <button class="tool-tile" onclick="showMessageHelp()">
+          <span class="tool-icon">✉</span>
+          <span class="tool-title">Message Builder</span>
+          <span class="tool-description">Turn rough thoughts into clearer language.</span>
+        </button>
+
+        <button class="tool-tile" onclick="showExport()">
+          <span class="tool-icon">⇪</span>
+          <span class="tool-title">Export Handoff</span>
+          <span class="tool-description">Create copyable handoffs for different situations.</span>
+        </button>
+
+        <button class="tool-tile" onclick="showSettings()">
+          <span class="tool-icon">⚙</span>
+          <span class="tool-title">Settings & Privacy</span>
+          <span class="tool-description">Review local storage, backups, and saved data.</span>
+        </button>
+      </div>
+    </section>
+
+    <section class="card" id="output">
+      <!-- App content appears here -->
+    </section>
+  </main>
+
+  <footer>
+    Lantern, not cage. Nets, not walls.
+  </footer>
+
+  <script>
+    let currentExportFilename = "bridgeback-handoff.txt";
+    let autosaveTimer = null;
+
+    let selectedMessagePurpose = "explain";
+    let selectedMessageContext = "general";
+    let selectedMessageTone = "professional";
+    let selectedMessageLength = "normal";
+
+    function getSavedProfile() {
+      const saved = localStorage.getItem("bridgebackProfile");
+
+      if (saved) {
+        try {
+          return JSON.parse(saved);
+        } catch (error) {
+          localStorage.removeItem("bridgebackProfile");
+        }
+      }
+
+      return {
+        communicationStyle: "",
+        overwhelmSignals: "",
+        helpfulSupport: "",
+        unhelpfulSupport: "",
+        realityAnchors: "",
+        advocacyNeeds: "",
+        trustedPhrases: "",
+        lastSaved: ""
+      };
+    }
+
+    function collectProfileFromForm() {
+      return {
+        communicationStyle: document.getElementById("communicationStyle").value,
+        overwhelmSignals: document.getElementById("overwhelmSignals").value,
+        helpfulSupport: document.getElementById("helpfulSupport").value,
+        unhelpfulSupport: document.getElementById("unhelpfulSupport").value,
+        realityAnchors: document.getElementById("realityAnchors").value,
+        advocacyNeeds: document.getElementById("advocacyNeeds").value,
+        trustedPhrases: document.getElementById("trustedPhrases").value,
+        lastSaved: new Date().toLocaleString()
+      };
+    }
+
+    function autosaveProfile() {
+      clearTimeout(autosaveTimer);
+
+      const saveStatus = document.getElementById("saveStatus");
+
+      if (saveStatus) {
+        saveStatus.innerHTML = "Typing…";
+      }
+
+      autosaveTimer = setTimeout(function() {
+        const profile = collectProfileFromForm();
+
+        localStorage.setItem("bridgebackProfile", JSON.stringify(profile));
+
+        const updatedStatus = document.getElementById("saveStatus");
+
+        if (updatedStatus) {
+          updatedStatus.innerHTML = `Autosaved: ${profile.lastSaved}`;
+        }
+      }, 800);
+    }
+
+    function saveProfile() {
+      const profile = collectProfileFromForm();
+
+      localStorage.setItem("bridgebackProfile", JSON.stringify(profile));
+
+      document.getElementById("saveStatus").innerHTML = `Saved. Last saved: ${profile.lastSaved}`;
+    }
+
+    function getProfileProgressHtml() {
+      const profile = getSavedProfile();
+
+      const fields = [
+        { label: "Communication Style", value: profile.communicationStyle },
+        { label: "Overwhelm Signals", value: profile.overwhelmSignals },
+        { label: "Helpful Support", value: profile.helpfulSupport },
+        { label: "Unhelpful Support", value: profile.unhelpfulSupport },
+        { label: "Reality Anchors", value: profile.realityAnchors },
+        { label: "Advocacy Needs", value: profile.advocacyNeeds },
+        { label: "Trusted Phrases", value: profile.trustedPhrases }
+      ];
+
+      const completed = fields.filter(function(field) {
+        return field.value && field.value.trim() !== "";
+      }).length;
+
+      const total = fields.length;
+
+      const listItems = fields.map(function(field) {
+        const isDone = field.value && field.value.trim() !== "";
+
+        return `
+          <li>
+            <span class="${isDone ? "progress-done" : "progress-missing"}">
+              ${isDone ? "✓" : "○"}
+            </span>
+            <span>${field.label}</span>
+          </li>
+        `;
+      }).join("");
+
+      return `
+        <div class="card">
+          <h3>Bridge Profile Progress</h3>
+
+          <p class="small-note">
+            This is not a score. It just shows which parts of your map have something written down.
+          </p>
+
+          <ul class="progress-list">
+            ${listItems}
+          </ul>
+
+          <p class="progress-pill">
+            ${completed} of ${total} sections started
+          </p>
+        </div>
+      `;
+    }
+
+    function getStartHereTutorialHtml() {
+      return `
+        <div class="tutorial-card">
+          <h3>Start Here: A Short Bridgeback Guide</h3>
+
+          <p>
+            Bridgeback Pocket helps you build a support map you own.
+            You do not have to fill everything out at once.
+          </p>
+
+          <ol class="tutorial-steps">
+            <li>
+              <strong>Start with one profile section.</strong><br>
+              Pick the easiest one, like Communication Style or Trusted Phrases.
+            </li>
+
+            <li>
+              <strong>Let autosave protect your words.</strong><br>
+              When you type in your Bridge Profile, Bridgeback will autosave after a short pause.
+            </li>
+
+            <li>
+              <strong>Use Overwhelm Mode when things are hard.</strong><br>
+              It gives you copyable support cards when you cannot organize everything at once.
+            </li>
+
+            <li>
+              <strong>Export a handoff when you need to share your map.</strong><br>
+              You can make versions for AI support, appointments, support people, accommodations, or plain summaries.
+            </li>
+
+            <li>
+              <strong>Back up your profile in Settings.</strong><br>
+              Download a profile backup so your map is not trapped in browser storage.
+            </li>
+          </ol>
+
+          <div class="tutorial-note">
+            Bridgeback is an access tool, not a test. Start small. One plank at a time.
+          </div>
+
+          <button onclick="showProfile()">Start My Bridge Profile</button>
+        </div>
+      `;
+    }
+
+    function showHome() {
+      const output = document.getElementById("output");
+
+      output.innerHTML = `
+        <h2 class="home-title">Welcome</h2>
+
+        <p>
+          Bridgeback Pocket helps you build a support profile you own.
+          It can hold communication needs, overwhelm patterns, advocacy notes,
+          and reusable handoffs.
+        </p>
+
+        <p class="small-note">
+          This prototype stores your profile locally in this browser.
+          It does not send your information anywhere.
+        </p>
+
+        <p class="small-note">
+          Bridgeback is not therapy, crisis care, medical care, or a replacement for human support.
+          It is a cognitive accessibility and self-advocacy tool.
+        </p>
+
+        ${getStartHereTutorialHtml()}
+
+        ${getProfileProgressHtml()}
+      `;
+    }
+
+    function showProfile() {
+      const profile = getSavedProfile();
+      const output = document.getElementById("output");
+
+      output.innerHTML = `
+        <h2>Build My Bridge Profile</h2>
+
+        <p>
+          Fill in whatever helps. You do not have to answer everything.
+          This profile is your map, and each section can open or close.Scroll down if you don't see the field
+        </p>
+
+        <p class="small-note">
+          ${profile.lastSaved ? "Last saved: " + profile.lastSaved : "No saved profile yet."}
+        </p>
+
+        <details class="profile-section" open>
+          <summary>Communication Style</summary>
+          <div class="profile-section-content">
+            <p>How should support talk to you when words are hard?</p>
+
+            <label for="communicationStyle">How should support communicate with me?</label>
+            <textarea
+              id="communicationStyle"
+              oninput="autosaveProfile()"
+              placeholder="Example: Use warm, clear language. Summarize first. Do not shame typos."
+            >${profile.communicationStyle}</textarea>
+          </div>
+        </details>
+
+        <details class="profile-section">
+          <summary>Overwhelm Signals</summary>
+          <div class="profile-section-content">
+            <p>What does it look like when your system is overloaded?</p>
+
+            <label for="overwhelmSignals">What are my overwhelm signals?</label>
+            <textarea
+              id="overwhelmSignals"
+              oninput="autosaveProfile()"
+              placeholder="Example: I get clipped, angry, repetitive, foggy, or unable to explain the actual problem."
+            >${profile.overwhelmSignals}</textarea>
+          </div>
+        </details>
+
+        <details class="profile-section">
+          <summary>Helpful Support</summary>
+          <div class="profile-section-content">
+            <p>What actually helps you return to one usable step?</p>
+
+            <label for="helpfulSupport">What kind of support helps me?</label>
+            <textarea
+              id="helpfulSupport"
+              oninput="autosaveProfile()"
+              placeholder="Example: Reflect what I mean, help me organize next steps, translate emotion into usable language."
+            >${profile.helpfulSupport}</textarea>
+          </div>
+        </details>
+
+        <details class="profile-section">
+          <summary>Unhelpful Support</summary>
+          <div class="profile-section-content">
+            <p>What makes things worse, even if someone means well?</p>
+
+            <label for="unhelpfulSupport">What kind of support does not help me?</label>
+            <textarea
+              id="unhelpfulSupport"
+              oninput="autosaveProfile()"
+              placeholder="Example: Generic crisis scripts, cold customer-service tone, treating anger as bad faith."
+            >${profile.unhelpfulSupport}</textarea>
+          </div>
+        </details>
+
+        <details class="profile-section">
+          <summary>Reality Anchors</summary>
+          <div class="profile-section-content">
+            <p>What boundaries or truths should the support system preserve?</p>
+
+            <label for="realityAnchors">What reality anchors matter?</label>
+            <textarea
+              id="realityAnchors"
+              oninput="autosaveProfile()"
+              placeholder="Example: AI is a tool, not a person. Support should return me to agency, not replace it."
+            >${profile.realityAnchors}</textarea>
+          </div>
+        </details>
+
+        <details class="profile-section">
+          <summary>Advocacy Needs</summary>
+          <div class="profile-section-content">
+            <p>What do you often need help explaining to other people?</p>
+
+            <label for="advocacyNeeds">What do I often need help explaining?</label>
+            <textarea
+              id="advocacyNeeds"
+              oninput="autosaveProfile()"
+              placeholder="Example: Disability access needs, communication problems, medical appointment prep, boundaries."
+            >${profile.advocacyNeeds}</textarea>
+          </div>
+        </details>
+
+        <details class="profile-section">
+          <summary>Trusted Phrases</summary>
+          <div class="profile-section-content">
+            <p>What phrases help orient you, calm the room, or preserve the frame?</p>
+
+            <label for="trustedPhrases">What phrases help bring me back?</label>
+            <textarea
+              id="trustedPhrases"
+              oninput="autosaveProfile()"
+              placeholder="Example: Lantern, not cage. The map belongs to the user. One plank at a time."
+            >${profile.trustedPhrases}</textarea>
+          </div>
+        </details>
+
+        <button onclick="saveProfile()">Save My Bridge Profile</button>
+
+        <p id="saveStatus" class="success"></p>
+      `;
+    }
+
+    function showOverwhelmed() {
+      const output = document.getElementById("output");
+
+      output.innerHTML = `
+        <h2>I’m Overwhelmed</h2>
+
+        <p>
+          You do not have to explain everything perfectly. Pick the kind of support card you need right now.
+        </p>
+
+        <button onclick="generateSupportCard('smallStep')">Give Me One Small Step</button>
+        <button onclick="generateSupportCard('translateAnger')">Translate the Anger</button>
+        <button onclick="generateSupportCard('humanHelp')">Ask for Human Help</button>
+        <button onclick="generateSupportCard('realityAnchor')">Make a Reality Anchor</button>
+        <button onclick="generateSupportCard('lowSpoons')">Make a Low-Spoons Plan</button>
+
+        <div id="supportCardOutput"></div>
+      `;
+    }
+
+    function generateSupportCard(type) {
+      const profile = getSavedProfile();
+
+      const communicationStyle = profile.communicationStyle || "Use clear, kind, plain language.";
+      const helpfulSupport = profile.helpfulSupport || "Help me find one usable next step.";
+      const realityAnchors = profile.realityAnchors || "The goal is not to solve everything right now. The goal is to return to agency.";
+      const trustedPhrases = profile.trustedPhrases || "Lantern, not cage. Nets, not walls.";
+
+      let title = "";
+      let cardText = "";
+
+      if (type === "smallStep") {
+        title = "One Small Step";
+
+        cardText = `OVERWHELM SUPPORT CARD: ONE SMALL STEP
+
+I do not need to solve the entire situation right now.
+
+My next useful step is:
+
+1. Stop and name the problem in one sentence.
+2. Pick the smallest action that reduces pressure.
+3. Do only that action first.
+
+Helpful support style:
+${communicationStyle}
+
+What helps:
+${helpfulSupport}
+
+Anchor:
+${trustedPhrases}`;
+      }
+
+      if (type === "translateAnger") {
+        title = "Translate the Anger";
+
+        cardText = `OVERWHELM SUPPORT CARD: TRANSLATE THE ANGER
+
+The anger is not the final message. The anger is a signal.
+
+Rough feeling:
+I am angry because something feels unsafe, unfair, confusing, dismissive, or inaccessible.
+
+Clearer version:
+I am upset because ____________________.
+What I need is ____________________.
+The next response should focus on ____________________.
+
+Helpful support style:
+${communicationStyle}
+
+Do not erase the feeling. Help turn it into usable language.`;
+      }
+
+      if (type === "humanHelp") {
+        title = "Ask for Human Help";
+
+        cardText = `OVERWHELM SUPPORT CARD: ASK FOR HUMAN HELP
+
+Message I can send:
+
+Hey, I am overwhelmed and having trouble organizing my thoughts.
+
+I do not need you to fix everything. I need help with one next step.
+
+The best way to help me right now is:
+- listen without judging,
+- help me identify the actual problem,
+- and help me choose the next practical action.
+
+Please use clear, calm language.`;
+      }
+
+      if (type === "realityAnchor") {
+        title = "Reality Anchor";
+
+        cardText = `OVERWHELM SUPPORT CARD: REALITY ANCHOR
+
+I am overwhelmed, but I am not required to solve everything in this state.
+
+Reality anchors:
+${realityAnchors}
+
+Trusted phrases:
+${trustedPhrases}
+
+Bridgeback is a tool for returning to agency.
+Not a cage.
+Not a substitute human.
+Not a verdict on me.
+
+One plank at a time.`;
+      }
+
+      if (type === "lowSpoons") {
+        title = "Low-Spoons Plan";
+
+        cardText = `OVERWHELM SUPPORT CARD: LOW-SPOONS PLAN
+
+I have limited energy right now.
+
+The plan is:
+
+1. Name the most urgent thing.
+2. Remove anything that can wait.
+3. Choose one action that takes less than five minutes.
+4. Stop after that action and reassess.
+
+Possible tiny actions:
+- drink water,
+- take meds if needed,
+- write one sentence,
+- send one message,
+- open the document,
+- ask for help,
+- rest without treating rest as failure.
+
+Helpful support:
+${helpfulSupport}`;
+      }
+
+      document.getElementById("supportCardOutput").innerHTML = `
+        <h3>${title}</h3>
+        <pre id="supportCardText">${cardText}</pre>
+        <button onclick="copySupportCard()">Copy Support Card</button>
+        <p id="supportCardStatus" class="success"></p>
+      `;
+    }
+
+    function copySupportCard() {
+      const supportCardText = document.getElementById("supportCardText").innerText;
+
+      navigator.clipboard.writeText(supportCardText).then(function() {
+        document.getElementById("supportCardStatus").innerHTML = "Copied to clipboard.";
+      });
+    }
+
+    function showMessageHelp() {
+      selectedMessagePurpose = "explain";
+      selectedMessageContext = "general";
+      selectedMessageTone = "professional";
+      selectedMessageLength = "normal";
+
+      const output = document.getElementById("output");
+
+      output.innerHTML = `
+        <h2>Message Builder 2.0</h2>
+
+        <p>
+          Use this when you have fragments, feelings, or messy thoughts but need a usable message.
+          Typos, anger, incomplete sentences, and rough notes are okay.
+        </p>
+
+        <label>What kind of message is this?</label>
+        <div class="option-grid">
+          <button class="option-button" id="purpose-ask" onclick="selectMessagePurpose('ask')">
+            <span class="option-title">Ask for help</span>
+            <span class="option-description">I need support, clarification, or action.</span>
+          </button>
+
+          <button class="option-button selected" id="purpose-explain" onclick="selectMessagePurpose('explain')">
+            <span class="option-title">Explain a problem</span>
+            <span class="option-description">Something happened and I need to make it clear.</span>
+          </button>
+
+          <button class="option-button" id="purpose-accommodation" onclick="selectMessagePurpose('accommodation')">
+            <span class="option-title">Request accommodation</span>
+            <span class="option-description">I need an access/process adjustment.</span>
+          </button>
+
+          <button class="option-button" id="purpose-boundary" onclick="selectMessagePurpose('boundary')">
+            <span class="option-title">Set a boundary</span>
+            <span class="option-description">I need to name a limit calmly.</span>
+          </button>
+
+          <button class="option-button" id="purpose-followup" onclick="selectMessagePurpose('followup')">
+            <span class="option-title">Follow up</span>
+            <span class="option-description">I need to check on something already raised.</span>
+          </button>
+
+          <button class="option-button" id="purpose-apologize" onclick="selectMessagePurpose('apologize')">
+            <span class="option-title">Apologize without self-blame</span>
+            <span class="option-description">I want accountability without self-erasure.</span>
+          </button>
+        </div>
+
+        <label>Who is this for?</label>
+        <div class="option-grid">
+          <button class="option-button selected" id="context-general" onclick="selectMessageContext('general')">
+            <span class="option-title">General / Other</span>
+            <span class="option-description">A flexible message for most situations.</span>
+          </button>
+
+          <button class="option-button" id="context-medical" onclick="selectMessageContext('medical')">
+            <span class="option-title">Doctor / medical office</span>
+            <span class="option-description">Clear, factual, appointment-friendly.</span>
+          </button>
+
+          <button class="option-button" id="context-agency" onclick="selectMessageContext('agency')">
+            <span class="option-title">Caseworker / agency</span>
+            <span class="option-description">Organized and records-friendly.</span>
+          </button>
+
+          <button class="option-button" id="context-housing" onclick="selectMessageContext('housing')">
+            <span class="option-title">Landlord / housing</span>
+            <span class="option-description">Specific request, clear next step.</span>
+          </button>
+
+          <button class="option-button" id="context-friend" onclick="selectMessageContext('friend')">
+            <span class="option-title">Friend / family</span>
+            <span class="option-description">Warmer and more relational.</span>
+          </button>
+
+          <button class="option-button" id="context-workschool" onclick="selectMessageContext('workschool')">
+            <span class="option-title">Work / school</span>
+            <span class="option-description">Professional and access-focused.</span>
+          </button>
+        </div>
+
+        <label>Choose a tone</label>
+        <div class="option-grid">
+          <button class="option-button" id="tone-gentle" onclick="selectMessageTone('gentle')">
+            <span class="option-title">Gentle</span>
+            <span class="option-description">Soft, warm, low-pressure.</span>
+          </button>
+
+          <button class="option-button" id="tone-firm" onclick="selectMessageTone('firm')">
+            <span class="option-title">Firm</span>
+            <span class="option-description">Clear, direct, not aggressive.</span>
+          </button>
+
+          <button class="option-button selected" id="tone-professional" onclick="selectMessageTone('professional')">
+            <span class="option-title">Professional</span>
+            <span class="option-description">Polite, organized, neutral.</span>
+          </button>
+
+          <button class="option-button" id="tone-apologetic" onclick="selectMessageTone('apologetic')">
+            <span class="option-title">Apologetic but not self-blaming</span>
+            <span class="option-description">Accountable without self-erasing.</span>
+          </button>
+
+          <button class="option-button" id="tone-boundary" onclick="selectMessageTone('boundary')">
+            <span class="option-title">Boundary-setting</span>
+            <span class="option-description">Calm, protective, clear limits.</span>
+          </button>
+        </div>
+
+        <label>How long should it be?</label>
+        <div class="option-grid">
+          <button class="option-button" id="length-short" onclick="selectMessageLength('short')">
+            <span class="option-title">Short</span>
+            <span class="option-description">A compact version for quick sending.</span>
+          </button>
+
+          <button class="option-button selected" id="length-normal" onclick="selectMessageLength('normal')">
+            <span class="option-title">Normal</span>
+            <span class="option-description">Clear but not too long.</span>
+          </button>
+
+          <button class="option-button" id="length-detailed" onclick="selectMessageLength('detailed')">
+            <span class="option-title">Detailed</span>
+            <span class="option-description">More context and structure.</span>
+          </button>
+        </div>
+
+        <label for="messageRecipient">Recipient name or role</label>
+        <textarea id="messageRecipient" placeholder="Example: Dr. Smith, my caseworker, my landlord, Mom, the office staff"></textarea>
+
+        <label for="messageMessyThoughts">Messy thoughts / rough notes</label>
+        <textarea id="messageMessyThoughts" placeholder="Paste the messy version here. Fragments are fine."></textarea>
+
+        <label for="messageNeed">What do you need them to do, understand, or answer?</label>
+        <textarea id="messageNeed" placeholder="Example: I need the next step written clearly."></textarea>
+
+        <label for="messageImportantDetails">Important details, dates, limits, or boundaries</label>
+        <textarea id="messageImportantDetails" placeholder="Example: I can answer by email but not phone."></textarea>
+
+        <button onclick="generateMessage()">Generate Message</button>
+
+        <div id="messageOutput"></div>
+      `;
+    }
+
+    function selectMessagePurpose(purpose) {
+      selectedMessagePurpose = purpose;
+      updateSelectedButton("purpose", purpose, ["ask", "explain", "accommodation", "boundary", "followup", "apologize"]);
+    }
+
+    function selectMessageContext(context) {
+      selectedMessageContext = context;
+      updateSelectedButton("context", context, ["general", "medical", "agency", "housing", "friend", "workschool"]);
+    }
+
+    function selectMessageTone(tone) {
+      selectedMessageTone = tone;
+      updateSelectedButton("tone", tone, ["gentle", "firm", "professional", "apologetic", "boundary"]);
+    }
+
+    function selectMessageLength(length) {
+      selectedMessageLength = length;
+      updateSelectedButton("length", length, ["short", "normal", "detailed"]);
+    }
+
+    function updateSelectedButton(groupName, selectedValue, allValues) {
+      allValues.forEach(function(value) {
+        const button = document.getElementById(groupName + "-" + value);
+
+        if (button) {
+          button.classList.remove("selected");
+        }
+      });
+
+      const selectedButton = document.getElementById(groupName + "-" + selectedValue);
+
+      if (selectedButton) {
+        selectedButton.classList.add("selected");
+      }
+    }
+
+    function generateMessage() {
+      const recipientInput = document.getElementById("messageRecipient").value.trim();
+      const messyThoughts = document.getElementById("messageMessyThoughts").value.trim();
+      const need = document.getElementById("messageNeed").value.trim();
+      const details = document.getElementById("messageImportantDetails").value.trim();
+
+      const recipient = recipientInput || getDefaultRecipient();
+      const subject = buildSubjectLine();
+      const oneSentence = buildOneSentenceVersion(messyThoughts, need);
+      const messageBody = buildMessageBody(recipient, messyThoughts, need, details);
+
+      document.getElementById("messageOutput").innerHTML = `
+        <div class="generated-section">
+          <h3>Generated Message</h3>
+
+          <p class="message-preview-note">
+            Purpose: ${getPurposeLabel(selectedMessagePurpose)} |
+            Context: ${getContextLabel(selectedMessageContext)} |
+            Tone: ${getToneLabel(selectedMessageTone)} |
+            Length: ${getLengthLabel(selectedMessageLength)}
+          </p>
+
+          <p class="generated-label">Subject line</p>
+          <pre id="generatedSubjectText"></pre>
+
+          <p class="generated-label">One-sentence version</p>
+          <pre id="generatedOneSentenceText"></pre>
+
+          <p class="generated-label">Full message</p>
+          <pre id="generatedMessageText"></pre>
+
+          <button onclick="copyGeneratedMessage()">Copy Full Message</button>
+          <button class="secondary-button" onclick="downloadGeneratedMessage()">Download Message</button>
+
+          <p id="generatedMessageStatus" class="success"></p>
+        </div>
+      `;
+
+      document.getElementById("generatedSubjectText").innerText = subject;
+      document.getElementById("generatedOneSentenceText").innerText = oneSentence;
+      document.getElementById("generatedMessageText").innerText = messageBody;
+    }
+
+    function getDefaultRecipient() {
+      if (selectedMessageContext === "medical") return "the medical team";
+      if (selectedMessageContext === "agency") return "the office";
+      if (selectedMessageContext === "housing") return "the housing team";
+      if (selectedMessageContext === "friend") return "there";
+      if (selectedMessageContext === "workschool") return "the team";
+
+      return "there";
+    }
+
+    function buildSubjectLine() {
+      if (selectedMessagePurpose === "ask") return "Request for help with next steps";
+      if (selectedMessagePurpose === "explain") return "Clarification about a recent issue";
+      if (selectedMessagePurpose === "accommodation") return "Request for communication support";
+      if (selectedMessagePurpose === "boundary") return "Clarifying a boundary";
+      if (selectedMessagePurpose === "followup") return "Following up on my previous message";
+      if (selectedMessagePurpose === "apologize") return "Following up and clarifying next steps";
+
+      return "Bridgeback message draft";
+    }
+
+    function buildOneSentenceVersion(messyThoughts, need) {
+      const rough = messyThoughts || "I am having trouble organizing the situation clearly";
+      const request = need || "I need a clear next step";
+
+      return `${rough} What I need now is: ${request}`;
+    }
+
+    function buildMessageBody(recipient, messyThoughts, need, details) {
+      const greeting = buildGreeting(recipient);
+      const opener = buildOpener();
+      const situationLabel = buildSituationLabel();
+      const requestLabel = buildRequestLabel();
+      const closing = buildClosing();
+
+      const situationText = messyThoughts || "[Describe what happened or what you are trying to explain.]";
+      const needText = need || "[Describe what you need from them.]";
+      const detailsText = details || "";
+
+      if (selectedMessageLength === "short") {
+        return `${greeting}
+
+${opener}
+
+${situationText}
+
+What I need:
+${needText}
+
+${closing}`;
+      }
+
+      if (selectedMessageLength === "detailed") {
+        return `${greeting}
+
+${opener}
+
+${situationLabel}
+${situationText}
+
+${requestLabel}
+${needText}
+
+${detailsText ? "Important details:\n" + detailsText + "\n\n" : ""}What would help most is a clear response with the next step, any deadline, and anything I need to do after this.
+
+${closing}`;
+      }
+
+      return `${greeting}
+
+${opener}
+
+${situationLabel}
+${situationText}
+
+${requestLabel}
+${needText}
+
+${detailsText ? "Additional context:\n" + detailsText + "\n\n" : ""}${closing}`;
+    }
+
+    function buildGreeting(recipient) {
+      if (
+        selectedMessageTone === "professional" ||
+        selectedMessageContext === "medical" ||
+        selectedMessageContext === "agency" ||
+        selectedMessageContext === "workschool"
+      ) {
+        return `Hi ${recipient},`;
+      }
+
+      if (selectedMessageTone === "gentle" || selectedMessageContext === "friend") {
+        return `Hey ${recipient},`;
+      }
+
+      return `Hi ${recipient},`;
+    }
+
+    function buildOpener() {
+      if (selectedMessagePurpose === "ask") {
+        if (selectedMessageTone === "gentle") {
+          return "I am reaching out because I could use some help organizing the next step.";
+        }
+
+        if (selectedMessageTone === "firm") {
+          return "I am reaching out because I need help with a clear next step.";
+        }
+
+        return "I am reaching out to ask for help with the following situation.";
+      }
+
+      if (selectedMessagePurpose === "explain") {
+        return "I want to explain the situation clearly so the next step is easier to understand.";
+      }
+
+      if (selectedMessagePurpose === "accommodation") {
+        return "I am asking for communication or process support so I can participate more effectively.";
+      }
+
+      if (selectedMessagePurpose === "boundary") {
+        return "I need to be clear about a boundary and what I need going forward.";
+      }
+
+      if (selectedMessagePurpose === "followup") {
+        return "I am following up because I need clarification on the next step.";
+      }
+
+      if (selectedMessagePurpose === "apologize") {
+        return "I am sorry for any confusion or delay. I am trying to handle this responsibly without losing track of what needs to happen next.";
+      }
+
+      return "I am reaching out about the following situation.";
+    }
+
+    function buildSituationLabel() {
+      if (selectedMessagePurpose === "boundary") return "What happened / what needs to change:";
+      if (selectedMessagePurpose === "accommodation") return "Where access or communication is becoming difficult:";
+      if (selectedMessagePurpose === "followup") return "What I am following up about:";
+
+      return "What happened:";
+    }
+
+    function buildRequestLabel() {
+      if (selectedMessagePurpose === "boundary") return "What I need going forward:";
+      if (selectedMessagePurpose === "accommodation") return "What would help me access this more effectively:";
+      if (selectedMessagePurpose === "followup") return "What I need clarified:";
+      if (selectedMessagePurpose === "apologize") return "What I need now:";
+
+      return "What I need:";
+    }
+
+    function buildClosing() {
+      if (selectedMessageTone === "gentle") {
+        return "I would appreciate a clear and patient response when you are able. Thank you.";
+      }
+
+      if (selectedMessageTone === "firm") {
+        return "Please respond with the next practical step or the information needed to resolve this. Thank you.";
+      }
+
+      if (selectedMessageTone === "professional") {
+        return "Please let me know the next step when you are able. Thank you.";
+      }
+
+      if (selectedMessageTone === "apologetic") {
+        return "Thank you for your patience. A clear next step would help me follow through.";
+      }
+
+      if (selectedMessageTone === "boundary") {
+        return "Please keep the response focused on the next practical step. I am willing to work toward a solution, but I need the communication to remain clear and respectful.";
+      }
+
+      return "Thank you.";
+    }
+
+    function getPurposeLabel(purpose) {
+      if (purpose === "ask") return "Ask for help";
+      if (purpose === "explain") return "Explain a problem";
+      if (purpose === "accommodation") return "Request accommodation";
+      if (purpose === "boundary") return "Set a boundary";
+      if (purpose === "followup") return "Follow up";
+      if (purpose === "apologize") return "Apologize without self-blame";
+
+      return "Explain a problem";
+    }
+
+    function getContextLabel(context) {
+      if (context === "general") return "General / Other";
+      if (context === "medical") return "Doctor / medical office";
+      if (context === "agency") return "Caseworker / agency";
+      if (context === "housing") return "Landlord / housing";
+      if (context === "friend") return "Friend / family";
+      if (context === "workschool") return "Work / school";
+
+      return "General / Other";
+    }
+
+    function getToneLabel(tone) {
+      if (tone === "gentle") return "Gentle";
+      if (tone === "firm") return "Firm";
+      if (tone === "professional") return "Professional";
+      if (tone === "apologetic") return "Apologetic but not self-blaming";
+      if (tone === "boundary") return "Boundary-setting";
+
+      return "Professional";
+    }
+
+    function getLengthLabel(length) {
+      if (length === "short") return "Short";
+      if (length === "normal") return "Normal";
+      if (length === "detailed") return "Detailed";
+
+      return "Normal";
+    }
+
+    function copyGeneratedMessage() {
+      const subjectText = document.getElementById("generatedSubjectText").innerText;
+      const messageText = document.getElementById("generatedMessageText").innerText;
+
+      const fullText = `Subject: ${subjectText}
+
+${messageText}`;
+
+      navigator.clipboard.writeText(fullText).then(function() {
+        document.getElementById("generatedMessageStatus").innerHTML = "Copied message with subject line.";
+      });
+    }
+
+    function downloadGeneratedMessage() {
+      const subjectText = document.getElementById("generatedSubjectText").innerText;
+      const oneSentenceText = document.getElementById("generatedOneSentenceText").innerText;
+      const messageText = document.getElementById("generatedMessageText").innerText;
+
+      const fullText = `BRIDGEBACK MESSAGE DRAFT
+
+SUBJECT
+${subjectText}
+
+ONE-SENTENCE VERSION
+${oneSentenceText}
+
+FULL MESSAGE
+${messageText}`;
+
+      const file = new Blob([fullText], { type: "text/plain" });
+      const link = document.createElement("a");
+
+      link.href = URL.createObjectURL(file);
+      link.download = "bridgeback-message-draft.txt";
+
+      document.body.appendChild(link);
+      link.click();
+      document.body.removeChild(link);
+
+      URL.revokeObjectURL(link.href);
+
+      document.getElementById("generatedMessageStatus").innerHTML =
+        "Downloaded as bridgeback-message-draft.txt.";
+    }
+
+    function showExport() {
+      const output = document.getElementById("output");
+
+      output.innerHTML = `
+        <h2>Export My Handoff</h2>
+
+        <p>
+          Choose what kind of Bridgeback handoff you need. Each version uses your saved Bridge Profile.
+        </p>
+
+        <button onclick="generateExport('aiHandoff')">AI Handoff</button>
+        <button onclick="generateExport('doctorPrep')">Doctor / Appointment Prep</button>
+        <button onclick="generateExport('supportPerson')">Support Person Handoff</button>
+        <button onclick="generateExport('accommodationNote')">Accommodation Note</button>
+        <button onclick="generateExport('plainSummary')">Plain Summary</button>
+
+        <div id="exportOutput"></div>
+      `;
+    }
+
+    function generateExport(type) {
+      const profile = getSavedProfile();
+
+      const communicationStyle = profile.communicationStyle || "[Not filled in yet]";
+      const overwhelmSignals = profile.overwhelmSignals || "[Not filled in yet]";
+      const helpfulSupport = profile.helpfulSupport || "[Not filled in yet]";
+      const unhelpfulSupport = profile.unhelpfulSupport || "[Not filled in yet]";
+      const realityAnchors = profile.realityAnchors || "[Not filled in yet]";
+      const advocacyNeeds = profile.advocacyNeeds || "[Not filled in yet]";
+      const trustedPhrases = profile.trustedPhrases || "[Not filled in yet]";
+
+      let title = "";
+      let exportText = "";
+
+      currentExportFilename = "bridgeback-handoff.txt";
+
+      if (type === "aiHandoff") {
+        title = "AI Handoff";
+        currentExportFilename = "bridgeback-ai-handoff.txt";
+
+        exportText = `BRIDGEBACK AI SUPPORT HANDOFF
+
+This is a user-owned cognitive accessibility and self-advocacy profile.
+
+PURPOSE
+Use this profile to support the user's communication, organization, emotional translation, and self-advocacy. Do not treat this as therapy, diagnosis, crisis care, or proof of AI personhood.
+
+COMMUNICATION STYLE
+${communicationStyle}
+
+OVERWHELM SIGNALS
+${overwhelmSignals}
+
+HELPFUL SUPPORT
+${helpfulSupport}
+
+UNHELPFUL SUPPORT
+${unhelpfulSupport}
+
+REALITY ANCHORS
+${realityAnchors}
+
+ADVOCACY NEEDS
+${advocacyNeeds}
+
+TRUSTED PHRASES
+${trustedPhrases}
+
+BOUNDARY
+AI support should return the user to agency. It should not replace human relationships, medical care, crisis care, or the user's own judgment.
+
+Bridgeback frame:
+Lantern, not cage.
+Nets, not walls.
+The map belongs to the user.`;
+      }
+
+      if (type === "doctorPrep") {
+        title = "Doctor / Appointment Prep";
+        currentExportFilename = "bridgeback-doctor-prep.txt";
+
+        exportText = `BRIDGEBACK APPOINTMENT PREP
+
+This summary is meant to help me communicate clearly during an appointment.
+
+COMMUNICATION NEEDS
+${communicationStyle}
+
+WHAT HAPPENS WHEN I AM OVERWHELMED
+${overwhelmSignals}
+
+WHAT HELPS ME COMMUNICATE
+${helpfulSupport}
+
+WHAT DOES NOT HELP
+${unhelpfulSupport}
+
+WHAT I OFTEN NEED HELP EXPLAINING
+${advocacyNeeds}
+
+NOTES FOR THE APPOINTMENT
+- Please give clear explanations.
+- Please write down important instructions when possible.
+- Please do not assume unclear speech or emotional overwhelm means I am not trying.
+- I may need extra time to organize my thoughts.
+
+MY GOAL
+I want to leave with a clear understanding of what is happening, what the next step is, and what I need to do after the appointment.`;
+      }
+
+      if (type === "supportPerson") {
+        title = "Support Person Handoff";
+        currentExportFilename = "bridgeback-support-person-handoff.txt";
+
+        exportText = `BRIDGEBACK SUPPORT PERSON HANDOFF
+
+This is a plain-language support note for someone helping me.
+
+HOW TO COMMUNICATE WITH ME
+${communicationStyle}
+
+SIGNS I MAY BE OVERWHELMED
+${overwhelmSignals}
+
+WHAT HELPS
+${helpfulSupport}
+
+WHAT DOES NOT HELP
+${unhelpfulSupport}
+
+WHAT I MAY NEED HELP WITH
+${advocacyNeeds}
+
+GROUNDING / TRUSTED PHRASES
+${trustedPhrases}
+
+IMPORTANT BOUNDARY
+I do not need someone to take over my life. I need support returning to one usable step.
+
+Helpful support sounds like:
+- "What is the next smallest step?"
+- "Do you want help organizing this?"
+- "Do you want me to listen, summarize, or help you write something?"
+- "You do not have to solve the whole thing right now."`;
+      }
+
+      if (type === "accommodationNote") {
+        title = "Accommodation Note";
+        currentExportFilename = "bridgeback-accommodation-note.txt";
+
+        exportText = `BRIDGEBACK ACCOMMODATION NOTE
+
+I am requesting communication and process support so I can participate more effectively.
+
+COMMUNICATION ACCESS NEEDS
+${communicationStyle}
+
+WHEN I AM OVERWHELMED
+${overwhelmSignals}
+
+SUPPORT THAT HELPS
+${helpfulSupport}
+
+SUPPORT THAT DOES NOT HELP
+${unhelpfulSupport}
+
+AREAS WHERE SUPPORT MAY BE NEEDED
+${advocacyNeeds}
+
+POSSIBLE ACCOMMODATIONS
+- Written instructions or summaries.
+- Extra processing time.
+- Clear step-by-step expectations.
+- Permission to ask clarifying questions.
+- Reduced pressure during moments of overwhelm.
+- Support turning verbal or emotional information into organized written language.
+
+GOAL
+The goal is not special treatment. The goal is access, clarity, and meaningful participation.`;
+      }
+
+      if (type === "plainSummary") {
+        title = "Plain Summary";
+        currentExportFilename = "bridgeback-plain-summary.txt";
+
+        exportText = `BRIDGEBACK PLAIN SUMMARY
+
+I use Bridgeback to help organize my communication, support needs, and self-advocacy.
+
+How to communicate with me:
+${communicationStyle}
+
+When I am overwhelmed:
+${overwhelmSignals}
+
+What helps:
+${helpfulSupport}
+
+What does not help:
+${unhelpfulSupport}
+
+What I often need help explaining:
+${advocacyNeeds}
+
+Helpful phrases:
+${trustedPhrases}
+
+Bridgeback is not therapy or a replacement for human support. It is a tool for helping me return to agency, clarity, and one usable next step.`;
+      }
+
+      const exportOutput = document.getElementById("exportOutput");
+
+      exportOutput.innerHTML = `
+        <h3>${title}</h3>
+        <pre id="exportText"></pre>
+        <button onclick="copyExportText()">Copy This Export</button>
+        <button class="secondary-button" onclick="downloadExportText()">Download This Export</button>
+        <p id="exportStatus" class="success"></p>
+      `;
+
+      document.getElementById("exportText").innerText = exportText;
+    }
+
+    function copyExportText() {
+      const exportText = document.getElementById("exportText").innerText;
+
+      navigator.clipboard.writeText(exportText).then(function() {
+        document.getElementById("exportStatus").innerHTML = "Copied to clipboard.";
+      });
+    }
+
+    function downloadExportText() {
+      const exportText = document.getElementById("exportText").innerText;
+
+      const file = new Blob([exportText], { type: "text/plain" });
+      const link = document.createElement("a");
+
+      link.href = URL.createObjectURL(file);
+      link.download = currentExportFilename;
+
+      document.body.appendChild(link);
+      link.click();
+      document.body.removeChild(link);
+
+      URL.revokeObjectURL(link.href);
+
+      document.getElementById("exportStatus").innerHTML = `Downloaded as ${currentExportFilename}.`;
+    }
+
+    function showSettings() {
+      const output = document.getElementById("output");
+
+      output.innerHTML = `
+        <h2>Settings & Privacy</h2>
+
+        <p>
+          Bridgeback Pocket is currently a local prototype.
+          Your saved Bridge Profile is stored in this browser using local storage.
+        </p>
+
+        <div class="card">
+          <h3>Where is my data stored?</h3>
+          <p>
+            Right now, your profile is saved only in this browser on this device.
+            It is not sent to a server by this prototype.
+          </p>
+        </div>
+
+        <div class="card">
+          <h3>What can erase it?</h3>
+          <p>
+            Your saved profile may disappear if you clear browser data, use a different browser,
+            move to another device, or delete this local app folder.
+          </p>
+        </div>
+
+        <div class="card">
+          <h3>Bridgeback boundary</h3>
+          <p>
+            Bridgeback is not therapy, crisis care, medical care, diagnosis, or a replacement for human support.
+            It is a cognitive accessibility and self-advocacy tool.
+          </p>
+        </div>
+
+        <button onclick="downloadProfileBackup()">Download Profile Backup</button>
+        <button onclick="openProfileBackupPicker()">Import Profile Backup</button>
+
+        <input
+          type="file"
+          id="profileBackupFile"
+          accept="application/json,.json"
+          onchange="importProfileBackup(event)"
+        />
+
+        <button class="secondary-button" onclick="clearBridgeProfile()">Clear Saved Bridge Profile</button>
+
+        <p id="settingsStatus" class="success"></p>
+      `;
+    }
+
+    function downloadProfileBackup() {
+      const profile = getSavedProfile();
+
+      const backupData = {
+        app: "Bridgeback Pocket",
+        backupType: "Bridge Profile Backup",
+        version: "0.1",
+        createdAt: new Date().toLocaleString(),
+        profile: profile
+      };
+
+      const backupText = JSON.stringify(backupData, null, 2);
+
+      const file = new Blob([backupText], { type: "application/json" });
+      const link = document.createElement("a");
+
+      link.href = URL.createObjectURL(file);
+      link.download = "bridgeback-profile-backup.json";
+
+      document.body.appendChild(link);
+      link.click();
+      document.body.removeChild(link);
+
+      URL.revokeObjectURL(link.href);
+
+      document.getElementById("settingsStatus").innerHTML =
+        "Downloaded profile backup as bridgeback-profile-backup.json.";
+    }
+
+    function openProfileBackupPicker() {
+      const fileInput = document.getElementById("profileBackupFile");
+
+      if (fileInput) {
+        fileInput.click();
+      }
+    }
+
+    function importProfileBackup(event) {
+      const file = event.target.files[0];
+
+      if (!file) {
+        return;
+      }
+
+      const reader = new FileReader();
+
+      reader.onload = function(loadEvent) {
+        try {
+          const backupData = JSON.parse(loadEvent.target.result);
+
+          if (
+            !backupData ||
+            backupData.app !== "Bridgeback Pocket" ||
+            backupData.backupType !== "Bridge Profile Backup" ||
+            !backupData.profile
+          ) {
+            document.getElementById("settingsStatus").innerHTML =
+              "This does not look like a valid Bridgeback profile backup.";
+            return;
+          }
+
+          const confirmImport = confirm(
+            "Import this Bridgeback profile backup? This will replace the profile currently saved in this browser."
+          );
+
+          if (!confirmImport) {
+            document.getElementById("settingsStatus").innerHTML = "Import canceled.";
+            return;
+          }
+
+          const importedProfile = {
+            communicationStyle: backupData.profile.communicationStyle || "",
+            overwhelmSignals: backupData.profile.overwhelmSignals || "",
+            helpfulSupport: backupData.profile.helpfulSupport || "",
+            unhelpfulSupport: backupData.profile.unhelpfulSupport || "",
+            realityAnchors: backupData.profile.realityAnchors || "",
+            advocacyNeeds: backupData.profile.advocacyNeeds || "",
+            trustedPhrases: backupData.profile.trustedPhrases || "",
+            lastSaved: new Date().toLocaleString()
+          };
+
+          localStorage.setItem("bridgebackProfile", JSON.stringify(importedProfile));
+
+          document.getElementById("settingsStatus").innerHTML =
+            "Profile backup imported. Your Bridge Profile has been restored in this browser.";
+        } catch (error) {
+          document.getElementById("settingsStatus").innerHTML =
+            "Import failed. The file could not be read as a valid JSON backup.";
+        }
+
+        event.target.value = "";
+      };
+
+      reader.readAsText(file);
+    }
+
+    function clearBridgeProfile() {
+      const confirmClear = confirm("Are you sure you want to clear your saved Bridge Profile from this browser?");
+
+      if (confirmClear) {
+        localStorage.removeItem("bridgebackProfile");
+        document.getElementById("settingsStatus").innerHTML =
+          "Saved Bridge Profile cleared from this browser.";
+      }
+    }
+
+    showHome();
+  </script>
+</body>
+</html>
